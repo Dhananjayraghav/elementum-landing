@@ -1,9 +1,11 @@
+import { useInView } from '../hooks/useInView'
 import styles from './Newsletter.module.css'
 
 export default function Newsletter() {
+  const { ref, visible } = useInView(0.15)
+
   return (
     <section className={styles.section}>
-      {/* Double arrow decoration */}
       <svg className={styles.arrows} viewBox="0 0 120 80" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M20 10 C30 40, 50 50, 50 70" stroke="#ff6b88" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
         <path d="M50 70 L44 58 M50 70 L56 58" stroke="#ff6b88" strokeWidth="2.5" strokeLinecap="round"/>
@@ -11,10 +13,9 @@ export default function Newsletter() {
         <path d="M85 70 L79 58 M85 70 L91 58" stroke="#ff6b88" strokeWidth="2.5" strokeLinecap="round"/>
       </svg>
 
-      {/* Purple crescent */}
       <div className={styles.crescent} />
 
-      <div className={styles.inner}>
+      <div ref={ref} className={`${styles.inner} reveal ${visible ? 'visible' : ''}`}>
         <h2 className={styles.heading}>
           Subscribe to<br />our newsletter
         </h2>

@@ -45,13 +45,13 @@ export default function Hero() {
 
       {/* Floating profile photos */}
       <div className={styles.profilesArea}>
-        {PROFILES.map(({ id, size, pos }) => (
+        {PROFILES.map(({ id, size, pos }, i) => (
           <img
             key={id}
             src={`https://randomuser.me/api/portraits/men/${id}.jpg`}
             alt="team member"
             className={styles.profilePhoto}
-            style={{ width: size, height: size, ...pos }}
+            style={{ width: size, height: size, animationDelay: `${0.6 + i * 0.08}s`, ...pos }}
           />
         ))}
       </div>

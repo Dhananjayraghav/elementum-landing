@@ -1,3 +1,4 @@
+import { useInView } from '../hooks/useInView'
 import styles from './Services.module.css'
 
 const SERVICES = [
@@ -16,24 +17,33 @@ const SERVICES = [
 ]
 
 export default function Services() {
+  const heading = useInView(0.1)
+  const list    = useInView(0.1)
+
   return (
     <section className={styles.section} id="services">
-      {/* Pink squiggle decoration */}
       <svg className={styles.squiggle} viewBox="0 0 80 160" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M40 10 C70 40, 10 70, 40 100 C70 130, 40 150, 40 160" stroke="#ff6b88" strokeWidth="2.5" fill="none" strokeLinecap="round"/>
       </svg>
 
       <div className={styles.inner}>
-        <h2 className={styles.heading}>
+        <h2
+          ref={heading.ref}
+          className={`${styles.heading} reveal ${heading.visible ? 'visible' : ''}`}
+        >
           What we{' '}
           <span className={styles.pillGreen}>can</span>
           <br />
           <span className={styles.underlineOrange}>offer</span> you!
         </h2>
 
-        <div className={styles.list}>
+        <div ref={list.ref} className={styles.list}>
           {SERVICES.map((s, i) => (
-            <div key={i} className={styles.row}>
+            <div
+              key={i}
+              className={`${styles.row} reveal ${list.visible ? 'visible' : ''}`}
+              style={{ transitionDelay: list.visible ? `${i * 0.12}s` : '0s' }}
+            >
               <p className={styles.category}>{s.category}</p>
               <h3 className={styles.title}>{s.title}</h3>
               <button className={styles.arrowBtn} aria-label={`Learn more about ${s.title}`}>

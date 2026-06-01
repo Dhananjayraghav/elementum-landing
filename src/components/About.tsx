@@ -1,14 +1,17 @@
+import { useInView } from '../hooks/useInView'
 import styles from './About.module.css'
 
 export default function About() {
+  const row1 = useInView(0.1)
+  const row2 = useInView(0.1)
+
   return (
     <section className={styles.section}>
-      {/* Pink gradient blob top-right */}
       <div className={styles.pinkBlob} />
 
       {/* --- Tomorrow row --- */}
-      <div className={styles.row}>
-        <div className={styles.textCol}>
+      <div ref={row1.ref} className={styles.row}>
+        <div className={`${styles.textCol} reveal-left ${row1.visible ? 'visible' : ''}`}>
           <h2 className={styles.heading}>
             <span className={styles.underlineOrange}>Tomorrow</span> should
             <br />
@@ -25,8 +28,7 @@ export default function About() {
           </a>
         </div>
 
-        <div className={styles.imageCol}>
-          {/* Red triangle decorations */}
+        <div className={`${styles.imageCol} reveal-right ${row1.visible ? 'visible' : ''}`} style={{ transitionDelay: '0.15s' }}>
           <div className={`${styles.triangle} ${styles.triangleTopRight}`} />
           <img
             src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=480&h=480&fit=crop&crop=faces"
@@ -50,8 +52,8 @@ export default function About() {
       </div>
 
       {/* --- Progress row --- */}
-      <div className={`${styles.row} ${styles.rowReverse}`}>
-        <div className={styles.imageCol}>
+      <div ref={row2.ref} className={`${styles.row} ${styles.rowReverse}`}>
+        <div className={`${styles.imageCol} reveal-left ${row2.visible ? 'visible' : ''}`}>
           <div className={`${styles.triangle} ${styles.triangleLeft}`} />
           <div className={`${styles.triangle} ${styles.triangleLeftBottom}`} />
           <img
@@ -61,7 +63,7 @@ export default function About() {
           />
         </div>
 
-        <div className={styles.textCol}>
+        <div className={`${styles.textCol} reveal-right ${row2.visible ? 'visible' : ''}`} style={{ transitionDelay: '0.15s' }}>
           <h2 className={styles.heading}>
             <span className={styles.pillGreen}>See</span> how we can
             <br />
