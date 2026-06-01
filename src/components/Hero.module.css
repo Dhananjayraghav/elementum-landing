@@ -1,0 +1,145 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  background: #fff;
+  padding: 4rem 2.5rem 0;
+}
+
+.wavyLeft {
+  position: absolute;
+  left: -10px;
+  top: 40%;
+  width: 80px;
+  height: 260px;
+  pointer-events: none;
+}
+
+.crescent {
+  position: absolute;
+  right: -10px;
+  top: 18%;
+  width: 72px;
+  height: 130px;
+  background: #7b5ea7;
+  border-radius: 70px 0 0 70px;
+  transform: rotate(-8deg);
+}
+
+.inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(2.8rem, 7vw, 5.5rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: #111;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.75rem;
+}
+
+.pillGreen {
+  background: #c2f2d0;
+  border-radius: 50px;
+  padding: 2px 14px;
+  display: inline-block;
+}
+
+.pillPink {
+  background: #f9c8d8;
+  border-radius: 50px;
+  padding: 2px 14px;
+  display: inline-block;
+}
+
+.underlineOrange {
+  text-decoration: underline;
+  text-decoration-color: #f4a321;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 6px;
+}
+
+.subtext {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.7;
+  max-width: 560px;
+  margin: 0 auto 2rem;
+}
+
+.brDesktop {
+  display: block;
+}
+
+/* Scattered profiles */
+.profilesArea {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  margin-top: 1rem;
+}
+
+.profilePhoto {
+  position: absolute;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 1024px) {
+  .section {
+    padding: 3rem 1.5rem 0;
+  }
+  .crescent {
+    width: 50px;
+    height: 90px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    min-height: auto;
+    padding: 2.5rem 1rem 0;
+  }
+
+  .heading {
+    font-size: clamp(2rem, 9vw, 3rem);
+    line-height: 1.15;
+  }
+
+  .brDesktop {
+    display: none;
+  }
+
+  .profilesArea {
+    height: 200px;
+  }
+
+  .profilePhoto {
+    transform: scale(0.7);
+    transform-origin: bottom center;
+  }
+
+  .wavyLeft {
+    display: none;
+  }
+
+  .crescent {
+    width: 36px;
+    height: 64px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profilesArea {
+    display: none;
+  }
+
+  .section {
+    padding-bottom: 3rem;
+  }
+}
