@@ -4,7 +4,7 @@ A pixel-accurate React implementation of the Elementum landing page, built from 
 
 ## Live Demo
 
-🔗 [View Live on Vercel](#) <!-- Replace with your Vercel URL -->
+🔗 [[View Live on Vercel]](https://elementum-landing-roan.vercel.app/)(#) <!-- Replace with your Vercel URL -->
 
 ## Tech Stack
 
