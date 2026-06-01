@@ -1,73 +1,52 @@
-# React + TypeScript + Vite
+# Elementum — Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A pixel-accurate React implementation of the Elementum landing page, built from a Figma design as part of an internship assignment.
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🔗 [View Live on Vercel](#) <!-- Replace with your Vercel URL -->
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React 19** with TypeScript
+- **Vite** for bundling and dev server
+- **CSS Modules** for scoped, component-level styling
+- **Google Fonts** — Poppins + Inter
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Fully responsive — mobile, tablet, and desktop
+- Sticky navbar with hamburger menu on mobile
+- Hero section with decorative highlights and scattered profile photos
+- About section with circular images, red triangle accents, and a wavy SVG connector
+- Services section with hover interactions
+- Testimonials section with floating avatars
+- Newsletter section with mint green background
+- 4-column footer (collapses to 2-column on mobile)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Sections
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+| Section | Description |
+|---|---|
+| Navbar | Sticky, responsive with mobile hamburger |
+| Hero | Highlighted heading, profile photo grid, decorative shapes |
+| About | Side-by-side image + text layout with decorative elements |
+| Services | Three service rows with category labels and arrow CTAs |
+| Testimonials | Quote card with surrounding floating avatars |
+| Newsletter | CTA section with subscribe button |
+| Footer | 4-column links + contact info |
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Getting Started
+
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Build
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run build
 ```
